@@ -1,0 +1,317 @@
+:root {
+    --instagram-color: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    --twitter-color: #1DA1F2;
+    --telegram-color: #0088cc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-image: url('Youtube LOGO B.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #333;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;  
+    height: 200px; 
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08),
+                0 0 0 1px rgba(0, 0, 0, 0.05),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12),
+                0 0 0 2px rgba(0, 0, 0, 0.08),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.social-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.social-card:hover::after {
+    left: 100%;
+}
+
+.social-card i {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-card:hover i {
+    transform: scale(1.2);
+}
+
+.social-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.social-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.social-card:hover::before {
+    transform: translateY(0);
+}
+
+.social-card:hover i {
+    transform: rotate(360deg) scale(1.2);
+}
+
+.social-card i {
+    font-size: 4rem;  
+    margin-bottom: 1.5rem; 
+    transition: all 0.5s ease;
+}
+
+.social-card span {
+    font-size: 1.4rem; 
+}
+
+
+@media (max-width: 480px) {
+    .social-card i {
+        font-size: 3.2rem;
+    }
+
+    .social-card span {
+        font-size: 1.2rem;
+    }
+}
+
+
+.instagram:hover {
+    background: var(--instagram-color);
+    color: white;
+}
+
+.twitter:hover {
+    background: var(--twitter-color);
+    color: white;
+}
+
+.telegram:hover {
+    background: var(--telegram-color);
+    color: white;
+}
+
+.social-card:active {
+    transform: scale(0.95);
+}
+
+
+.instagram i {
+    background: var(--instagram-color);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.twitter i {
+    color: var(--twitter-color);
+}
+
+.telegram i {
+    color: var(--telegram-color);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.social-card:nth-child(1) { animation-delay: 0.3s; }
+.social-card:nth-child(2) { animation-delay: 0.5s; }
+.social-card:nth-child(3) { animation-delay: 0.7s; }
+
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .social-card {
+        padding: 1.5rem;
+        width: 100%;
+        max-width: 300px;
+    }
+
+  
+    @media (max-width: 768px) {
+        .container {
+            height: 100vh;
+            overflow-y: auto;
+        }
+    
+        .social-links {
+            flex-direction: column;
+            gap: 2rem;
+            padding: 1rem;
+            overflow-y: auto;
+            max-height: 70vh;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+        }
+    
+      
+        .social-links::-webkit-scrollbar {
+            width: 6px;
+            height: auto;
+        }
+    
+        .social-links::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+    
+        .social-links::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+    
+        .social-links::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+    
+        .social-card {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .social-card i {
+        font-size: 2.5rem;
+    }
+
+    .social-card span {
+        font-size: 1rem;
+    }
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
