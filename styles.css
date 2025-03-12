@@ -229,75 +229,52 @@ body::before {
 
 
 @media (max-width: 768px) {
-    .title {
-        font-size: 2.5rem;
+    body {
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+
+    .container {
+        padding: 1rem;
+        height: auto;
+        overflow: visible;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        overflow: visible;
+        max-height: none;
+        padding: 0;
     }
 
     .social-card {
-        padding: 1.5rem;
-        width: 100%;
-        max-width: 300px;
-    }
-
-  
-    @media (max-width: 768px) {
-        .container {
-            height: 100vh;
-            overflow-y: auto;
-        }
-    
-        .social-links {
-            flex-direction: column;
-            gap: 2rem;
-            padding: 1rem;
-            overflow-y: auto;
-            max-height: 70vh;
-            -webkit-overflow-scrolling: touch;
-            scroll-behavior: smooth;
-            scrollbar-width: thin;
-        }
-    
-      
-        .social-links::-webkit-scrollbar {
-            width: 6px;
-            height: auto;
-        }
-    
-        .social-links::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-    
-        .social-links::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-    
-        .social-links::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 0, 0, 0.3);
-        }
-    
-        .social-card {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-        }
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 480px) {
-    .title {
-        font-size: 2rem;
-    }
-
-    .social-card i {
-        font-size: 2.5rem;
-    }
-
-    .social-card span {
-        font-size: 1rem;
+    .social-card {
+        width: 180px;
+        height: 180px;
     }
 }
+
+.title {
+    font-size: 2.5rem;
+}
+
+.social-card i {
+    font-size: 2.5rem;
+}
+
+.social-card span {
+    font-size: 1rem;
+}
+
 
 .profile-image {
     width: 150px;
