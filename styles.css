@@ -18,7 +18,28 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow-y: auto;  
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start;
+        padding: 2rem 0;
+        min-height: auto;
+    }
+
+    .container {
+        padding: 1rem;
+        min-height: 100vh;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        padding-bottom: 2rem;
+    }
 }
 
 body::before {
@@ -253,6 +274,17 @@ body::before {
         width: 200px;
         height: 200px;
         margin: 0 auto;
+    }
+    .instagram {
+        order: 1;
+    }
+
+    .telegram {
+        order: 2;
+    }
+
+    .twitter {
+        order: 3;
     }
 }
 
